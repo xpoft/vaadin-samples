@@ -1,0 +1,15 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- log by method is not fast. remove it later -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}/%method %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+    <logger name="ru.xpoft" level="DEBUG"/>
+
+    <root level="WARN">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
