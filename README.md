@@ -1,7 +1,7 @@
 Vaadin Samples
 =======================
 
-# Spring Vaadin Integration
+## Spring Vaadin Integration
 Sample project for SpringVaadinIntegration add-on. http://vaadin.com/addon/springvaadinintegration
 
 ~~~~
@@ -13,7 +13,7 @@ mvn jetty:run
 Then open http://localhost:9090/
 
 
-# Spring Security
+## Spring Security
 
 ~~~~
 git clone git://github.com/xpoft/vaadin-samples.git vaadin-samples
@@ -23,7 +23,7 @@ mvn jetty:run
 
 Then open http://localhost:9090/
 
-# Apache Shiro
+## Apache Shiro
 
 ~~~~
 git clone git://github.com/xpoft/vaadin-samples.git vaadin-samples
