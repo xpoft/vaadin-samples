@@ -7,6 +7,11 @@
     <groupId>ru.xpoft.vaadin.sample</groupId>
     <artifactId>parent</artifactId>
     <version>1.0</version>
+    <modules>
+        <module>../spring-integration</module>
+        <module>../spring-security</module>
+        <module>../apache-shiro</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
