@@ -13,7 +13,7 @@
     <http auto-config='true'>
         <intercept-url pattern="/login/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/**" access="ROLE_USER, ROLE_ADMIN" />
-        <form-login login-page="/login/"/>
+        <form-login login-page="/login/" authentication-failure-url="/login/?error=true"/>
     </http>
 
     <authentication-manager>

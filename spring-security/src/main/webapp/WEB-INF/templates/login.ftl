@@ -20,6 +20,12 @@
             margin-left:auto;
             margin-right:auto;
         }
+
+        .error
+        {
+            font-weight: bold;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +49,10 @@
                     </tr>
                 </table>
             </form>
+
+            <#if isError?? && isError?string == "true">
+                <div class="error">User not found</div>
+            </#if>
 
             <span>
                 ROLE_USER. username: user, password: user<br>
