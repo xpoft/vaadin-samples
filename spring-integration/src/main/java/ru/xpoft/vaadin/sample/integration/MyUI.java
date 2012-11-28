@@ -1,5 +1,6 @@
 package ru.xpoft.vaadin.sample.integration;
 
+import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
@@ -32,8 +33,8 @@ public class MyUI extends UI
     {
         setSizeFull();
 
-        DiscoveryNavigator navigator = new DiscoveryNavigator(this, getContent());
-        navigator.navigateTo(UI.getCurrent().getPage().getFragment());
+        DiscoveryNavigator navigator = new DiscoveryNavigator(this, this);
+        navigator.navigateTo(UI.getCurrent().getPage().getUriFragment());
 
         Notification.show(String.format("Session counter: %d, application counter: %d", sessionCounter.getCount(), applicationCounter.getCount()));
     }

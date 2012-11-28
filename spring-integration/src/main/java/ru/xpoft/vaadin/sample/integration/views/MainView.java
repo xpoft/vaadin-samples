@@ -37,11 +37,14 @@ public class MainView extends Panel implements View
     public void PostConstruct()
     {
         setSizeFull();
-        ((VerticalLayout)getContent()).setSpacing(true);
 
-        addComponent(form);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
-        addComponent(new Button("Show counts", new Button.ClickListener()
+        layout.addComponent(form);
+
+        layout.addComponent(new Button("Show counts", new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent event)
@@ -50,10 +53,12 @@ public class MainView extends Panel implements View
             }
         }));
 
-        addComponent(new Link("Go to the Label View", new ExternalResource("#!" + LabelView.NAME)));
-        addComponent(new Link("Go to the Error View. I18n error messages", new ExternalResource("#!" + ErrorView.NAME)));
-        addComponent(new Link("Go to the I18N View", new ExternalResource("#!" + I18N.NAME)));
-        addComponent(new Link("Go to the UI scoped View", new ExternalResource("#!" + UIScopedView.NAME)));
+        layout.addComponent(new Link("Go to the Label View", new ExternalResource("#!" + LabelView.NAME)));
+        layout.addComponent(new Link("Go to the Error View. I18n error messages", new ExternalResource("#!" + ErrorView.NAME)));
+        layout.addComponent(new Link("Go to the I18N View", new ExternalResource("#!" + I18N.NAME)));
+        layout.addComponent(new Link("Go to the UI scoped View", new ExternalResource("#!" + UIScopedView.NAME)));
+
+        setContent(layout);
     }
 
     @Override

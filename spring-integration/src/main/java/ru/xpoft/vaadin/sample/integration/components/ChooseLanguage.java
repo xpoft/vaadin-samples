@@ -1,10 +1,7 @@
 package ru.xpoft.vaadin.sample.integration.components;
 
 import com.vaadin.server.ExternalResource;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Panel;
-import com.vaadin.ui.UI;
+import com.vaadin.ui.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +42,7 @@ public class ChooseLanguage extends Panel
                 UI.getCurrent().getSession().setLocale(new Locale("ru"));
 
                 // Reload page
-                UI.getCurrent().getPage().setFragment(UI.getCurrent().getPage().getFragment() + "/");
+                UI.getCurrent().getPage().setUriFragment(UI.getCurrent().getPage().getUriFragment() + "/");
             }
         });
         russian.setIcon(new ExternalResource("static/img/ru_flag.png"));
@@ -59,7 +56,7 @@ public class ChooseLanguage extends Panel
                 UI.getCurrent().getSession().setLocale(Locale.ENGLISH);
 
                 // Reload page
-                UI.getCurrent().getPage().setFragment(UI.getCurrent().getPage().getFragment() + "/");
+                UI.getCurrent().getPage().setUriFragment(UI.getCurrent().getPage().getUriFragment() + "/");
             }
         });
         english.setIcon(new ExternalResource("static/img/uk_flag.png"));
@@ -73,7 +70,7 @@ public class ChooseLanguage extends Panel
                 UI.getCurrent().getSession().setLocale(Locale.GERMAN);
 
                 // Reload page
-                UI.getCurrent().getPage().setFragment(UI.getCurrent().getPage().getFragment() + "/");
+                UI.getCurrent().getPage().setUriFragment(UI.getCurrent().getPage().getUriFragment() + "/");
             }
         });
         german.setIcon(new ExternalResource("static/img/de_flag.png"));
@@ -87,12 +84,12 @@ public class ChooseLanguage extends Panel
                 UI.getCurrent().getSession().setLocale(new Locale("fi"));
 
                 // Reload page
-                UI.getCurrent().getPage().setFragment(UI.getCurrent().getPage().getFragment() + "/");
+                UI.getCurrent().getPage().setUriFragment(UI.getCurrent().getPage().getUriFragment() + "/");
             }
         });
         finnish.setIcon(new ExternalResource("static/img/fi_flag.png"));
         buttons.addComponent(finnish);
 
-        addComponent(buttons);
+        setContent(buttons);
     }
 }

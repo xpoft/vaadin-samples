@@ -38,13 +38,15 @@ public class ErrorView extends Panel implements View
     public void PostConstruct() throws GeneralSecurityException
     {
         setSizeFull();
-        ((VerticalLayout) getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
-        addComponent(chooseLanguage);
+        layout.addComponent(chooseLanguage);
 
-        addComponent(new Label(messageSource.getMessage("error_view.reload")));
+        layout.addComponent(new Label(messageSource.getMessage("error_view.reload")));
 
-        addComponent(new Button(messageSource.getMessage("error_view.turn_off"), new Button.ClickListener()
+        layout.addComponent(new Button(messageSource.getMessage("error_view.turn_off"), new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent event)
@@ -53,14 +55,16 @@ public class ErrorView extends Panel implements View
             }
         }));
 
-        addComponent(new Button(messageSource.getMessage("main.go_back"), new Button.ClickListener()
+        layout.addComponent(new Button(messageSource.getMessage("main.go_back"), new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent event)
             {
-                Page.getCurrent().setFragment("!" + MainView.NAME);
+                Page.getCurrent().setUriFragment("!" + MainView.NAME);
             }
         }));
+
+        setContent(layout);
     }
 
     @Override

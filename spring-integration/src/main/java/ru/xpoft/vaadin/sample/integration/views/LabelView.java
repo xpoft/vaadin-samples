@@ -3,10 +3,7 @@ package ru.xpoft.vaadin.sample.integration.views;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.Page;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Panel;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ru.xpoft.vaadin.VaadinView;
@@ -27,17 +24,21 @@ public class LabelView extends Panel implements View
     public void PostConstruct()
     {
         setSizeFull();
-        ((VerticalLayout)getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
-        addComponent(new Label("It's a label!"));
-        addComponent(new Button("Go back", new Button.ClickListener()
+        layout.addComponent(new Label("It's a label!"));
+        layout.addComponent(new Button("Go back", new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent event)
             {
-                Page.getCurrent().setFragment("!" + MainView.NAME);
+                Page.getCurrent().setUriFragment("!" + MainView.NAME);
             }
         }));
+
+        setContent(layout);
     }
 
     @Override

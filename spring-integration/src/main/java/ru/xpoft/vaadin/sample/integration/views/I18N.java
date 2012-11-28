@@ -39,12 +39,14 @@ public class I18N extends Panel implements View
     public void PostConstruct() throws GeneralSecurityException
     {
         setSizeFull();
-        ((VerticalLayout) getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
-        addComponent(chooseLanguage);
+        layout.addComponent(chooseLanguage);
 
-        addComponent(new Label(messageSource.getMessage("i18n.message1")));
-        addComponent(new Button(messageSource.getMessage("i18n.button1"), new Button.ClickListener()
+        layout.addComponent(new Label(messageSource.getMessage("i18n.message1")));
+        layout.addComponent(new Button(messageSource.getMessage("i18n.button1"), new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent clickEvent)
@@ -54,16 +56,18 @@ public class I18N extends Panel implements View
         }));
         Link link1 = new Link(messageSource.getMessage("i18n.link1"), new ExternalResource("http://vaadin.com/addon/springvaadinintegration"));
         link1.setTargetName("_blank");
-        addComponent(link1);
+        layout.addComponent(link1);
 
-        addComponent(new Button(messageSource.getMessage("main.go_back"), new Button.ClickListener()
+        layout.addComponent(new Button(messageSource.getMessage("main.go_back"), new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent event)
             {
-                Page.getCurrent().setFragment("!" + MainView.NAME);
+                Page.getCurrent().setUriFragment("!" + MainView.NAME);
             }
         }));
+
+        setContent(layout);
     }
 
     @Override

@@ -3,10 +3,7 @@ package ru.xpoft.vaadin.apache_shiro_sample.views;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.ExternalResource;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Link;
-import com.vaadin.ui.Panel;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -29,10 +26,14 @@ public class RoleAdminView extends Panel implements View
     public void PostConstruct()
     {
         setSizeFull();
-        ((VerticalLayout)getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
-        addComponent(new Label("ROLE_ADMIN"));
-        addComponent(new Link("Go back", new ExternalResource("#!" + MainView.NAME)));
+        layout.addComponent(new Label("ROLE_ADMIN"));
+        layout.addComponent(new Link("Go back", new ExternalResource("#!" + MainView.NAME)));
+
+        setContent(layout);
     }
 
     @Override

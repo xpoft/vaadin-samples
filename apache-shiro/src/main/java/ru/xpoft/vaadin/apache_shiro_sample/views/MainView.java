@@ -32,7 +32,9 @@ public class MainView extends Panel implements View
     public void PostConstruct()
     {
         setSizeFull();
-        ((VerticalLayout) getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
         HorizontalLayout usernameLayout = new HorizontalLayout();
         usernameLayout.setSpacing(true);
@@ -44,7 +46,7 @@ public class MainView extends Panel implements View
         //userRolesLayout.addComponent(new Label("Roles:"));
         //userRolesLayout.addComponent(rolesLabel);
 
-        addComponent(usernameLayout);
+        layout.addComponent(usernameLayout);
         //addComponent(userRolesLayout);
 
         Link userView = new Link("Role \"user\" View (disabled, if user doesn't have access)", new ExternalResource("#!" + RoleUserView.NAME));
@@ -53,11 +55,13 @@ public class MainView extends Panel implements View
         userView.setEnabled(SecurityUtils.getSubject().hasRole("user"));
         roleView.setEnabled(SecurityUtils.getSubject().hasRole("admin"));
 
-        addComponent(userView);
-        addComponent(roleView);
-        addComponent(new Link("Role \"admin\" View (throw exception, if user doesn't have access)", new ExternalResource("#!" + RoleAdminView.NAME)));
+        layout.addComponent(userView);
+        layout.addComponent(roleView);
+        layout.addComponent(new Link("Role \"admin\" View (throw exception, if user doesn't have access)", new ExternalResource("#!" + RoleAdminView.NAME)));
 
-        addComponent(new Link("Logout", new ExternalResource("/logout/")));
+        layout.addComponent(new Link("Logout", new ExternalResource("/logout/")));
+
+        setContent(layout);
     }
 
     @Override

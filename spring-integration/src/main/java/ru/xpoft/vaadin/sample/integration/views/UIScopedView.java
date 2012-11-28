@@ -33,24 +33,26 @@ public class UIScopedView extends Panel implements View
         }
 
         setSizeFull();
-        ((VerticalLayout)getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
-        HorizontalLayout status = new HorizontalLayout();
-
-        addComponent(new Label("At first time, it's loading about 5 seconds."));
-        addComponent(new Label("Now click \"Go back\" button, than \"Go to the UI scoped View\" again."));
-        addComponent(statusLabel);
-        addComponent(new Button("Go back", new Button.ClickListener()
+        layout.addComponent(new Label("At first time, it's loading about 5 seconds."));
+        layout.addComponent(new Label("Now click \"Go back\" button, than \"Go to the UI scoped View\" again."));
+        layout.addComponent(statusLabel);
+        layout.addComponent(new Button("Go back", new Button.ClickListener()
         {
             @Override
             public void buttonClick(Button.ClickEvent event)
             {
-                Page.getCurrent().setFragment("!" + MainView.NAME);
+                Page.getCurrent().setUriFragment("!" + MainView.NAME);
             }
         }));
 
         statusLabel.setCaption("State");
         statusLabel.setValue("First time");
+
+        setContent(layout);
     }
 
     @Override

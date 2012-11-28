@@ -36,7 +36,9 @@ public class MainView extends Panel implements View
     public void PostConstruct()
     {
         setSizeFull();
-        ((VerticalLayout) getContent()).setSpacing(true);
+        VerticalLayout layout = new VerticalLayout();
+        layout.setSpacing(true);
+        layout.setMargin(true);
 
         HorizontalLayout usernameLayout = new HorizontalLayout();
         usernameLayout.setSpacing(true);
@@ -48,8 +50,8 @@ public class MainView extends Panel implements View
         userRolesLayout.addComponent(new Label("Roles:"));
         userRolesLayout.addComponent(rolesLabel);
 
-        addComponent(usernameLayout);
-        addComponent(userRolesLayout);
+        layout.addComponent(usernameLayout);
+        layout.addComponent(userRolesLayout);
 
         Link userView = new Link("ROLE_USER View (disabled, if user doesn't have access)", new ExternalResource("#!" + RoleUserView.NAME));
         Link roleView = new Link("ROLE_ADMIN View (disabled, if user doesn't have access)", new ExternalResource("#!" + RoleAdminView.NAME));
@@ -57,11 +59,13 @@ public class MainView extends Panel implements View
         userView.setEnabled(SpringSecurityHelper.hasRole("ROLE_USER"));
         roleView.setEnabled(SpringSecurityHelper.hasRole("ROLE_ADMIN"));
 
-        addComponent(userView);
-        addComponent(roleView);
-        addComponent(new Link("ROLE_ADMIN View (throw exception, if user doesn't have access)", new ExternalResource("#!" + RoleAdminView.NAME)));
+        layout.addComponent(userView);
+        layout.addComponent(roleView);
+        layout.addComponent(new Link("ROLE_ADMIN View (throw exception, if user doesn't have access)", new ExternalResource("#!" + RoleAdminView.NAME)));
 
-        addComponent(new Link("Logout", new ExternalResource("/j_spring_security_logout")));
+        layout.addComponent(new Link("Logout", new ExternalResource("/j_spring_security_logout")));
+
+        setContent(layout);
     }
 
     @Override

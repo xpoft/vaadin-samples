@@ -13,25 +13,42 @@ import ru.xpoft.vaadin.security.ShiroSecurityNavigator;
  */
 @Component
 @Scope("prototype")
-public class MyUI extends UI implements Terminal.ErrorListener
+public class MyUI extends UI implements ErrorHandler
 {
     @Override
     protected void init(final VaadinRequest request)
     {
-        VaadinServiceSession.getCurrent().setErrorHandler(this);
+        VaadinSession.getCurrent().setErrorHandler(this);
         setSizeFull();
 
-        try
+        ShiroSecurityNavigator navigator = new ShiroSecurityNavigator(this, this);
+        navigator.navigateTo(UI.getCurrent().getPage().getUriFragment());
+    }
+
+    /**
+     * Exception on action
+     */
+    @Override
+    public void error(com.vaadin.server.ErrorEvent event)
+    {
+        // connector event
+        if (event.getThrowable().getCause() instanceof IllegalArgumentException)
         {
-            ShiroSecurityNavigator navigator = new ShiroSecurityNavigator(this, getContent());
-            navigator.navigateTo(UI.getCurrent().getPage().getFragment());
+            IllegalArgumentException exception = (IllegalArgumentException) event.getThrowable().getCause();
+            Notification.show(exception.getMessage(), Notification.Type.ERROR_MESSAGE);
+
+            // Cleanup view. Now Vaadin ignores errors and always shows the view.  :-(
+            // since beta10
+            setContent(null);
+            return;
         }
-        /**
-         * Exception on page load
-         */
-        catch (IllegalArgumentException e)
+
+        // Error on page load. Now it doesn't work. User sees standard error page.
+        if (event.getThrowable() instanceof IllegalArgumentException)
         {
-            Label label = new Label(e.getMessage());
+            IllegalArgumentException exception = (IllegalArgumentException) event.getThrowable();
+
+            Label label = new Label(exception.getMessage());
             label.setWidth(-1, Unit.PERCENTAGE);
 
             Link goToMain = new Link("Go to main", new ExternalResource("/"));
@@ -48,23 +65,10 @@ public class MyUI extends UI implements Terminal.ErrorListener
             mainLayout.setComponentAlignment(layout, Alignment.MIDDLE_CENTER);
 
             setContent(mainLayout);
-            Notification.show(e.getMessage(), Notification.Type.ERROR_MESSAGE);
-        }
-    }
-
-    /**
-     * Exception on action
-     */
-    @Override
-    public void terminalError(Terminal.ErrorEvent event)
-    {
-        if (event.getThrowable().getCause() instanceof IllegalArgumentException)
-        {
-            IllegalArgumentException exception = (IllegalArgumentException) event.getThrowable().getCause();
             Notification.show(exception.getMessage(), Notification.Type.ERROR_MESSAGE);
             return;
         }
 
-        DefaultErrorListener.doDefault(event);
+        DefaultErrorHandler.doDefault(event);
     }
 }
