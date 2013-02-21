@@ -9,6 +9,7 @@
         <property name="successUrl" value="/"/>
         <property name="filterChainDefinitions">
             <value>
+                /favicon.ico = noSessionCreation, anon
                 /login/ = authc
                 /logout/ = logout
                 /** = authc, roles[user]
