@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.1.2.RELEASE</spring.version>
         <vaadin.version>7.0.0</vaadin.version>
+        <spring.vaadin.version>1.7</spring.vaadin.version>
     </properties>
 
     <repositories>
@@ -63,7 +64,7 @@
         <dependency>
             <groupId>ru.xpoft.vaadin</groupId>
             <artifactId>spring-vaadin-integration</artifactId>
-            <version>1.6.8</version>
+            <version>${spring.vaadin.version}</version>
         </dependency>
 
         <!-- Logging -->
