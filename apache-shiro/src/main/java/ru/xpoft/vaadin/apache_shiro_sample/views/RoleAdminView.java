@@ -30,7 +30,7 @@ public class RoleAdminView extends Panel implements View
         layout.setSpacing(true);
         layout.setMargin(true);
 
-        layout.addComponent(new Label("ROLE_ADMIN"));
+        layout.addComponent(new Label("@RequiresRoles(\"admin\")"));
         layout.addComponent(new Link("Go back", new ExternalResource("#!" + MainView.NAME)));
 
         setContent(layout);
