@@ -22,7 +22,6 @@ public class MyUI extends UI implements ErrorHandler
         setSizeFull();
 
         ShiroSecurityNavigator navigator = new ShiroSecurityNavigator(this, this);
-        navigator.navigateTo(UI.getCurrent().getPage().getUriFragment());
     }
 
     /**

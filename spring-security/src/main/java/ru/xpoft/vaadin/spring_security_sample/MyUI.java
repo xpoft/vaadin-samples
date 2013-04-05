@@ -22,7 +22,6 @@ public class MyUI extends UI implements ErrorHandler
         setSizeFull();
 
         DiscoveryNavigator navigator = new DiscoveryNavigator(this, this);
-        navigator.navigateTo(UI.getCurrent().getPage().getUriFragment());
     }
 
     /**
