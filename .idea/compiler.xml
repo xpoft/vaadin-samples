@@ -26,14 +26,18 @@
         <processorPath useClasspath="true" />
         <module name="apache-shiro" />
         <module name="spring-integration" />
+        <module name="spring-integration2" />
         <module name="spring-security" />
+        <module name="spring-session" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apache-shiro" target="1.6" />
       <module name="parent" target="1.6" />
       <module name="spring-integration" target="1.6" />
+      <module name="spring-integration2" target="1.6" />
       <module name="spring-security" target="1.6" />
+      <module name="spring-session" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
