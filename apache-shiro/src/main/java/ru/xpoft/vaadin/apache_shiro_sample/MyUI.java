@@ -2,10 +2,8 @@ package ru.xpoft.vaadin.apache_shiro_sample;
 
 import com.vaadin.server.*;
 import com.vaadin.ui.*;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.xpoft.vaadin.DiscoveryNavigator;
 import ru.xpoft.vaadin.security.ShiroSecurityNavigator;
 
 /**

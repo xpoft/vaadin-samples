@@ -2,7 +2,6 @@ package ru.xpoft.vaadin.spring_security_sample;
 
 import com.vaadin.server.*;
 import com.vaadin.ui.*;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Component;

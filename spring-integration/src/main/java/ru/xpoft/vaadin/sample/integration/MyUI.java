@@ -1,6 +1,5 @@
 package ru.xpoft.vaadin.sample.integration;
 
-import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
