@@ -53,4 +53,9 @@
         <servlet-name>default</servlet-name>
         <url-pattern>/static/*</url-pattern>
     </servlet-mapping>
+
+    <!-- Vaadin 7.1 @Push -->
+    <!--
+    <async-supported>true</supported>
+    -->
 </web-app>

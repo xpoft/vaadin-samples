@@ -15,6 +15,11 @@ import ru.xpoft.vaadin.sample.session.beans.SingletonCounter;
 import ru.xpoft.vaadin.sample.session.web_beans.WebSingletonCounter;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author xpoft
@@ -30,6 +35,7 @@ public class MainView extends Panel implements View
     private Label sessionHashLabel;
     private TextField textField;
     private TextArea textArea;
+    private Label pushLabel;
 
     @Autowired
     private transient ApplicationContext applicationContext;
@@ -63,6 +69,9 @@ public class MainView extends Panel implements View
         sessionInformation.setContent(sessionInformationLayout);
         sessionInformation.setVisible(false);
 
+        // adding a placeholder label, changed afterwards.
+        pushLabel = new Label("Push label");
+
         setSizeFull();
         VerticalLayout layout = new VerticalLayout();
         layout.setSpacing(true);
@@ -71,6 +80,7 @@ public class MainView extends Panel implements View
         layout.addComponent(new Label("It's a label!"));
         layout.addComponent(sessionInformation);
         layout.addComponent(textField);
+        layout.addComponent(pushLabel);
 
         layout.addComponent(new Button("Show session information", new Button.ClickListener()
         {
@@ -121,6 +131,34 @@ public class MainView extends Panel implements View
         layout.addComponent(textArea);
 
         setContent(layout);
+    }
+
+    @Override
+    public void attach()
+    {
+        super.attach();
+
+        final UI ui = this.getUI();
+        final AtomicInteger pushCounts = new AtomicInteger(0);
+        final Runnable beeper = new Runnable()
+        {
+            public void run()
+            {
+                ui.access(new Runnable()
+                {
+                    public void run()
+                    {
+                        Date date = java.util.Calendar.getInstance().getTime();
+                        String text = date.toString() + ". Count: " + pushCounts.incrementAndGet();
+                        System.out.println(text);
+                        pushLabel.setValue(text);
+                    }
+                });
+
+            }
+        };
+        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        scheduler.scheduleAtFixedRate(beeper, 5, 5, TimeUnit.SECONDS);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package ru.xpoft.vaadin.sample.session;
 
+import com.vaadin.annotations.Push;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 import org.springframework.context.annotation.Scope;
@@ -13,6 +14,7 @@ import java.util.Random;
  */
 @Component
 @Scope("session")
+@Push
 public class MyUI extends UI
 {
     private long randomId;

@@ -34,6 +34,12 @@
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-themes:7.1.0" />
+          <element id="library" level="project" name="Maven: com.vaadin:vaadin-push:7.1.0" />
+          <element id="library" level="project" name="Maven: com.vaadin.external.atmosphere:atmosphere-runtime:1.0.14.vaadin3" />
+          <element id="library" level="project" name="Maven: com.vaadin.external.atmosphere:atmosphere-compat-jbossweb:1.0.14.vaadin3" />
+          <element id="library" level="project" name="Maven: com.vaadin.external.atmosphere:atmosphere-compat-tomcat:1.0.14.vaadin3" />
+          <element id="library" level="project" name="Maven: com.vaadin.external.slf4j:vaadin-slf4j-jdk14:1.6.1" />
+          <element id="library" level="project" name="Maven: com.vaadin.external.atmosphere:atmosphere-compat-tomcat7:1.0.14.vaadin3" />
           <element id="library" level="project" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:2.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.6" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.6.6" />
