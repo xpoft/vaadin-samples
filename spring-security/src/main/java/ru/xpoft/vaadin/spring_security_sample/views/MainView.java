@@ -88,7 +88,8 @@ public class MainView extends Panel implements View
                     @Override
                     public void run()
                     {
-                        pushEvent.sendInfo(sessionCounter.getCount(), getUI().getUIId());
+                        String string = "sessionCounter.getCount: " + sessionCounter.getCount();
+                        pushEvent.sendInfo(string, getUI().getUIId());
                     }
                 });
             }

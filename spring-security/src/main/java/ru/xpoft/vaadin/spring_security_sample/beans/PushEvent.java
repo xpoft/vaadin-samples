@@ -23,14 +23,12 @@ public class PushEvent
         listeners.put(inx++, listener);
     }
 
-    public void sendInfo(int sessionCount, int sendUiId)
+    public void sendInfo(String value, int sendUiId)
     {
-        final String string = "sessionCounter.getCount: " + sessionCount;
-
         // Notify everybody that may be interested.
         for (PushEventListener listener : listeners.values())
         {
-            listener.labelValue(string, sendUiId);
+            listener.labelValue(value, sendUiId);
         }
     }
 }
