@@ -13,6 +13,11 @@
         <param-value>/WEB-INF/root-context.xml</param-value>
     </context-param>
 
+    <!-- Spring session beans in singletons -->
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+
     <!-- Vaadin servlet -->
     <servlet>
         <servlet-name>Vaadin Sample Application</servlet-name>

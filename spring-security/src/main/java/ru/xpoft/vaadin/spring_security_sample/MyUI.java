@@ -1,5 +1,6 @@
 package ru.xpoft.vaadin.spring_security_sample;
 
+import com.vaadin.annotations.Push;
 import com.vaadin.server.*;
 import com.vaadin.ui.*;
 import org.springframework.context.annotation.Scope;
@@ -12,6 +13,7 @@ import ru.xpoft.vaadin.DiscoveryNavigator;
  */
 @Component
 @Scope("prototype")
+@Push
 public class MyUI extends UI implements ErrorHandler
 {
     @Override
