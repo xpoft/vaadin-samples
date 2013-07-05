@@ -12,13 +12,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.vaadin:vaadin-server:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin:vaadin-shared:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin:vaadin-theme-compiler:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin:vaadin-client-compiled:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin:vaadin-client:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin:vaadin-themes:7.1.0" level="project" />
-    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:2.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:3.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.1.2.RELEASE" level="project" />
@@ -48,7 +41,7 @@
     <orderEntry type="library" name="Maven: com.vaadin.external.atmosphere:atmosphere-compat-tomcat:1.0.14.vaadin3" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.slf4j:vaadin-slf4j-jdk14:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.atmosphere:atmosphere-compat-tomcat7:1.0.14.vaadin3" level="project" />
-    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:2.0" level="project" />
+    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.6.6" level="project" />

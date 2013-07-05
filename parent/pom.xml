@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.1.2.RELEASE</spring.version>
         <vaadin.version>7.1.0</vaadin.version>
-        <spring.vaadin.version>2.0</spring.vaadin.version>
+        <spring.vaadin.version>2.0.1</spring.vaadin.version>
     </properties>
 
     <repositories>
