@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
  */
 @Component
 @Scope("prototype")
-@VaadinView(RoleUserView.NAME)
+@VaadinView(value = RoleUserView.NAME, cached = true)
 @Secured("ROLE_USER")
 public class RoleUserView extends Panel implements View
 {

@@ -3,6 +3,7 @@ package ru.xpoft.vaadin.spring_security_sample.beans;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import ru.xpoft.vaadin.spring_security_sample.events.PushEventListener;
 
@@ -12,7 +13,7 @@ import java.util.WeakHashMap;
  * @author xpoft
  */
 @Component
-@Scope("session")
+@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class PushEvent
 {
     private WeakHashMap<Integer, PushEventListener> listeners = new WeakHashMap<Integer, PushEventListener>();

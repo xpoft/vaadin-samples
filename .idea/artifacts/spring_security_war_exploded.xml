@@ -8,6 +8,8 @@
           <element id="module-output" name="spring-security" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
+          <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:3.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.1.2.RELEASE" />

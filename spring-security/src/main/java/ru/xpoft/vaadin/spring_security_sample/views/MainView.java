@@ -26,7 +26,7 @@ import java.util.List;
  */
 @Component
 @Scope("prototype")
-@VaadinView(MainView.NAME)
+@VaadinView(value = MainView.NAME, cached = true)
 public class MainView extends Panel implements View
 {
     @Autowired
@@ -120,14 +120,23 @@ public class MainView extends Panel implements View
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event)
     {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        List<String> roles = new ArrayList<String>();
-        for (GrantedAuthority grantedAuthority : user.getAuthorities())
+        String username = "NULL";
+        String roles = "NULL";
+
+        if (SecurityContextHolder.getContext().getAuthentication() != null)
         {
-            roles.add(grantedAuthority.getAuthority());
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            List<String> rolesList = new ArrayList<String>();
+            for (GrantedAuthority grantedAuthority : user.getAuthorities())
+            {
+                rolesList.add(grantedAuthority.getAuthority());
+            }
+
+            username = user.getUsername();
+            roles = StringUtils.join(rolesList, ",");
         }
 
-        usernameLabel.setValue(user.getUsername());
-        rolesLabel.setValue(StringUtils.join(roles, ","));
+        usernameLabel.setValue(username);
+        rolesLabel.setValue(roles);
     }
 }
