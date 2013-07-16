@@ -2,6 +2,7 @@ package ru.xpoft.vaadin.spring_security_sample;
 
 import com.vaadin.annotations.Push;
 import com.vaadin.server.*;
+import com.vaadin.shared.ui.ui.Transport;
 import com.vaadin.ui.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.access.AccessDeniedException;
@@ -13,7 +14,7 @@ import ru.xpoft.vaadin.DiscoveryNavigator;
  */
 @Component
 @Scope("prototype")
-@Push
+@Push(transport = Transport.STREAMING)
 public class MyUI extends UI implements ErrorHandler
 {
     @Override

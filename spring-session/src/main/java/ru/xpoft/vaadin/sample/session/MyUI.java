@@ -2,6 +2,8 @@ package ru.xpoft.vaadin.sample.session;
 
 import com.vaadin.annotations.Push;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.shared.communication.PushMode;
+import com.vaadin.shared.ui.ui.Transport;
 import com.vaadin.ui.UI;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -14,7 +16,7 @@ import java.util.Random;
  */
 @Component
 @Scope("session")
-@Push
+@Push(transport = Transport.STREAMING)
 public class MyUI extends UI
 {
     private long randomId;
