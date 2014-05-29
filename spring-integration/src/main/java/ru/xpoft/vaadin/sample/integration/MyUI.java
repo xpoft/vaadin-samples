@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import ru.xpoft.vaadin.DiscoveryNavigator;
 import ru.xpoft.vaadin.sample.integration.beans.ApplicationCounter;
 import ru.xpoft.vaadin.sample.integration.beans.SessionCounter;
+import ru.xpoft.vaadin.sample.integration.service.SampleService;
 
 /**
  * @author xpoft
@@ -27,6 +28,9 @@ public class MyUI extends UI
     @Autowired
     private ApplicationCounter applicationCounter;
 
+    @Autowired
+    private SampleService sampleService;
+
     @Override
     protected void init(final VaadinRequest request)
     {
@@ -34,6 +38,6 @@ public class MyUI extends UI
 
         DiscoveryNavigator navigator = new DiscoveryNavigator(this, this);
 
-        Notification.show(String.format("Session counter: %d, application counter: %d", sessionCounter.getCount(), applicationCounter.getCount()));
+        Notification.show(String.format("Session counter: %d, application counter: %d, sampleService: %d", sessionCounter.getCount(), applicationCounter.getCount(), sampleService.getRandom()));
     }
 }

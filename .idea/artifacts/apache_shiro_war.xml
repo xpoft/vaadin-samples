@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="apache-shiro:war">
     <output-path>$PROJECT_DIR$/apache-shiro/target</output-path>
-    <root id="archive" name="apache-shiro-1.0.war">
+    <root id="archive" name="apache-shiro-3.0.war">
       <element id="artifact" artifact-name="apache-shiro:war exploded" />
     </root>
   </artifact>

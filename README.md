@@ -1,6 +1,16 @@
 Vaadin Samples
 =======================
 
+## Versions
+
+# Vaadin 7.2.x
+SpringVaadinIntegration 3.x
+VaadinSample 3.x
+
+# Vaadin 7.1.x
+SpringVaadinIntegration 2.x
+VaadinSample 2.x
+
 ## Spring Vaadin Integration
 Sample project for SpringVaadinIntegration add-on. http://vaadin.com/addon/springvaadinintegration
 
