@@ -12,6 +12,7 @@
         <module>../spring-security</module>
         <module>../apache-shiro</module>
         <module>../spring-session</module>
+        <module>../spring-boot</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -149,7 +150,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
