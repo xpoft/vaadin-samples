@@ -77,6 +77,7 @@ public class MainView extends Panel implements View
         layout.setSpacing(true);
         layout.setMargin(true);
 
+        layout.addComponent(new Label("Session scoped UI hasn't supported anymore :-("));
         layout.addComponent(new Label("It's a label!"));
         layout.addComponent(sessionInformation);
         layout.addComponent(textField);

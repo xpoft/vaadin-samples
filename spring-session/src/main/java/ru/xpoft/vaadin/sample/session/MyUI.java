@@ -1,5 +1,6 @@
 package ru.xpoft.vaadin.sample.session;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Push;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
@@ -13,8 +14,9 @@ import java.util.Random;
  * @author xpoft
  */
 @Component
-@Scope("session")
+@Scope("prototype")
 @Push
+@PreserveOnRefresh
 public class MyUI extends UI
 {
     private long randomId;
