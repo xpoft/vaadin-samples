@@ -25,6 +25,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="apache-shiro" />
+        <module name="original" />
         <module name="spring-integration" />
         <module name="spring-integration2" />
         <module name="spring-security" />
@@ -33,6 +34,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apache-shiro" target="1.6" />
+      <module name="original" target="1.6" />
       <module name="parent" target="1.6" />
       <module name="spring-integration" target="1.6" />
       <module name="spring-integration2" target="1.6" />
