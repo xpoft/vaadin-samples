@@ -131,7 +131,10 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/apache-shiro" />
+    <file type="web" url="file://$PROJECT_DIR$/original" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-integration" />
     <file type="web" url="file://$PROJECT_DIR$/spring-security" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-session" />
   </component>
   <component name="IdProvider" IDEtalkID="46A689C6C1F0D3E3DCD0CBB6C0D0FFBE" />
   <component name="IvyIDEA.ProjectSettings">

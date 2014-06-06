@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-session:war">
+    <output-path>$PROJECT_DIR$/spring-session/target</output-path>
+    <root id="archive" name="spring-session-3.0.war">
+      <element id="artifact" artifact-name="spring-session:war exploded" />
+    </root>
+  </artifact>
+</component>
