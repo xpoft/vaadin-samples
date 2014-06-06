@@ -57,7 +57,7 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-push:7.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.atmosphere:atmosphere-runtime:2.1.2.vaadin2" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.slf4j:vaadin-slf4j-jdk14:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:2.9.9-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:3.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.7.7" level="project" />
