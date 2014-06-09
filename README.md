@@ -22,6 +22,15 @@ mvn jetty:run
 
 Then open http://localhost:9090/
 
+## Spring Boot
+
+~~~~
+git clone git://github.com/xpoft/vaadin-samples.git vaadin-samples
+cd spring-boot
+mvn compile exec:java
+~~~~
+
+Then open http://localhost:9090/
 
 ## Spring Security
 
