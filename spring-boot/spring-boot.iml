@@ -76,7 +76,7 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-push:7.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.atmosphere:atmosphere-runtime:2.1.2.vaadin2" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.slf4j:vaadin-slf4j-jdk14:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:3.0" level="project" />
+    <orderEntry type="library" name="Maven: ru.xpoft.vaadin:spring-vaadin-integration:3.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.20" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />

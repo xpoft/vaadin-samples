@@ -8,6 +8,9 @@
         <version>3.0</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
+    <properties>
+        <jetty.version>9.2.0.v20140526</jetty.version>
+    </properties>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-boot</artifactId>
     <dependencies>
