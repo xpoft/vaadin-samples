@@ -20,10 +20,10 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.1.0.RELEASE</spring.version>
-        <spring.security.version>3.2.5.RELEASE</spring.security.version>
-        <vaadin.version>7.3.0</vaadin.version>
-        <spring.vaadin.version>3.1</spring.vaadin.version>
+        <spring.version>4.2.0.RELEASE</spring.version>
+        <spring.security.version>4.0.3.RELEASE</spring.security.version>
+        <vaadin.version>7.6.0</vaadin.version>
+        <spring.vaadin.version>3.2</spring.vaadin.version>
     </properties>
 
     <repositories>

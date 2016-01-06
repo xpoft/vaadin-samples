@@ -24,13 +24,49 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="apache-shiro" />
-        <module name="original" />
-        <module name="spring-boot" />
-        <module name="spring-integration" />
         <module name="spring-integration2" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-boot" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-boot" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-integration" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-integration" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-security" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="spring-security" />
+      </profile>
+      <profile default="false" name="Annotation profile for original" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="original" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-session" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="spring-session" />
+      </profile>
+      <profile default="false" name="Annotation profile for apache-shiro" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="apache-shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -48,4 +84,3 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value=" -encoding utf-8" />
   </component>
 </project>
-
