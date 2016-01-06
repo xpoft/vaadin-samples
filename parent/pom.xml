@@ -6,7 +6,7 @@
 
     <groupId>ru.xpoft.vaadin.sample</groupId>
     <artifactId>parent</artifactId>
-    <version>3.0</version>
+    <version>3.2</version>
     <modules>
         <module>../spring-integration</module>
         <module>../spring-security</module>

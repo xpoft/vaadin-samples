@@ -3,6 +3,10 @@ Vaadin Samples
 
 ## Versions
 
+# Vaadin 7.6.x
+SpringVaadinIntegration 3.2.x
+VaadinSample 3.2.x
+
 # Vaadin 7.2.x
 SpringVaadinIntegration 3.x
 VaadinSample 3.x

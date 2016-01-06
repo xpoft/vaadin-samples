@@ -6,7 +6,7 @@
 
     <groupId>ru.xpoft.vaadin.sample</groupId>
     <artifactId>original</artifactId>
-    <version>3.0</version>
+    <version>3.2</version>
     <packaging>war</packaging>
 
     <properties>
