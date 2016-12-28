@@ -66,7 +66,7 @@ public class MainView extends Panel implements View
         layout.addComponent(userView);
         layout.addComponent(new Link("Role \"admin\" View (throw exception, if user doesn't have access)", new ExternalResource("#!" + RoleAdminView.NAME)));
 
-        layout.addComponent(new Link("Logout", new ExternalResource("/logout/")));
+        layout.addComponent(new Link("Logout", new ExternalResource("logout/")));
 
         setContent(layout);
     }
